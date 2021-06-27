@@ -5,6 +5,7 @@ A webapp for information regarding all your favourite heroes and villains made u
 
 ## Demo
 <img src = "src/assets/demo.png">
+
 ## Available Scripts
 
 In the project directory, you can run:
