@@ -1,0 +1,33 @@
+/* importing fonts */  
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,700&display=swap');
+
+// assigning variables
+$primaryColor : #151722;
+$secondaryColor : #1F233B;
+
+* {
+  color: whitesmoke;
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  background-color: $primaryColor;
+}
+
+.sidebar h2 {
+  margin: 3rem 0;
+}
+
+.sidebar h2:hover {
+  color: #7D5DF8;
+  transition: 0.35s ease;
+}
