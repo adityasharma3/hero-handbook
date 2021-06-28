@@ -11,11 +11,13 @@ const Logopanel = () => {
                 borderRadius: '0 0 1rem',
             }} 
         >
-            <img src = {logo} style = {{
-                display: 'block',
-                width: '5rem',
-                margin: '1rem auto',
-                
+            <img 
+                src = {logo} 
+                alt="logo"
+                style = {{
+                    display: 'block',
+                    width: '5rem',
+                    margin: '1rem auto',
             }} />    
         </div>
     );

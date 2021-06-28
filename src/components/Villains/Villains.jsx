@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react'
+import React , {useState , useEffect} from 'react'
 
-const Heroes = () => {
-    const [heroes, setHeroes] = useState(['']);
+export const Villains = () => {
+    const [villains, setVillains] = useState(['']);
 
     useEffect(() => {
-        fetch("https://superhero-search.p.rapidapi.com/api/heroes", {
+        fetch("https://superhero-search.p.rapidapi.com/api/villains", {
             "method": "GET",
             "headers": {
                 "x-rapidapi-key": "64e1b6ec71msh79f17be5fb5db5dp1ecd69jsnb974c96d020c",
@@ -14,7 +14,7 @@ const Heroes = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data[0])
-                setHeroes(data)
+                setVillains(data)
             })
     }, []);
 
@@ -31,7 +31,7 @@ const Heroes = () => {
                 margin: '2rem 5vw 2rem 12vw '
             }}
         >
-            <h1>Heroes Page</h1><br></br>
+            <h1>Villains Page</h1><br></br>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, harum ipsa. Odit alias deserunt neque nam repellat quisquam quidem veritatis, omnis doloribus quaerat saepe assumenda cum eum hic quam atque?</p>
 
 
@@ -45,7 +45,7 @@ const Heroes = () => {
                     flexWrap: 'wrap'
                 }}
             >
-                {heroes.map((item) =>
+                {villains.map((item) =>
                     <div
                         id={item.id}
                         className="hero-container"
@@ -73,5 +73,3 @@ const Heroes = () => {
         </div>
     );
 }
-
-export default Heroes;

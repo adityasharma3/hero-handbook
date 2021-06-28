@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect, useState } from 'react';
 
-const Heroes = () => {
+const Home = () => {
+
     const [heroes, setHeroes] = useState(['']);
 
     useEffect(() => {
@@ -31,7 +32,7 @@ const Heroes = () => {
                 margin: '2rem 5vw 2rem 12vw '
             }}
         >
-            <h1>Heroes Page</h1><br></br>
+            <h1>Home Page</h1><br></br>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, harum ipsa. Odit alias deserunt neque nam repellat quisquam quidem veritatis, omnis doloribus quaerat saepe assumenda cum eum hic quam atque?</p>
 
 
@@ -45,25 +46,25 @@ const Heroes = () => {
                     flexWrap: 'wrap'
                 }}
             >
-                {heroes.map((item) =>
-                    <div
-                        id={item.id}
+                {heroes.map((hero) =>
+                    <div 
+                        id = {hero.id} 
                         className="hero-container"
-                        style={{
+                        style = {{
                             margin: '1rem 0',
                             backgroundColor: '#202138',
                             padding: '0.65rem',
                             borderRadius: '1rem'
                         }}
                     >
-                        <img
-                            src={item.images.md}
-                            alt={item.name}
-                            style={{
+                        <img 
+                            src={hero.images.md}
+                            alt={hero.name}
+                            style = {{
                                 borderRadius: '1rem'
-                            }}
+                            }} 
                         />
-                        <h2>{item.name}</h2>
+                        <h2>{hero.name}</h2>
                     </div>
                 )
                 }
@@ -74,4 +75,4 @@ const Heroes = () => {
     );
 }
 
-export default Heroes;
+export default Home;

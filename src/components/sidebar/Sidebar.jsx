@@ -1,5 +1,11 @@
 import React from 'react'
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+
 import Logopanel from './Logopanel';
+import Home from '../Home/Home';
+import Heroes from '../Heroes/Heroes';
+import { Villains } from '../Villains/Villains';
+import { Search } from '../Search/Search';
 
 const Sidebar = () => {
     return (
@@ -16,9 +22,11 @@ const Sidebar = () => {
             }}
         >
             <Logopanel />
+
             <h2>Heroes</h2>
             <h2>Villains</h2>
             <h2>Search</h2>
+
         </div>
     );
 }
