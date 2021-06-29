@@ -63,7 +63,10 @@ const Heroes = () => {
                                 borderRadius: '1rem'
                             }}
                         />
-                        <h2>{item.name}</h2>
+
+                        <a href={"/viewCharacter/" + `${item.name}`}>
+                            <h2>{item.name}</h2>
+                        </a>
                     </div>
                 )
                 }

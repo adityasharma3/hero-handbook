@@ -1,27 +1,32 @@
 import React, { useEffect, useState } from 'react';
 
-const Home = () => {
+const Home = (props) => {
 
     const [heroes, setHeroes] = useState(['']);
 
     useEffect(() => {
-        fetch("https://superhero-search.p.rapidapi.com/api/heroes", {
-            "method": "GET",
-            "headers": {
-                "x-rapidapi-key": "64e1b6ec71msh79f17be5fb5db5dp1ecd69jsnb974c96d020c",
-                "x-rapidapi-host": "superhero-search.p.rapidapi.com"
-            }
-        })
+        try {
+        fetch(`https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/all.json`)
             .then(res => res.json())
             .then(data => {
                 console.log(data[0])
                 setHeroes(data)
             })
+        }
+
+        catch {
+            alert('api not responding');
+        }
     }, []);
 
 
-    return (
+    const openThisCharacter = (props) => {
 
+        // console.log(props)
+        // props.openCharacter(name);
+    }
+
+    return (
         <div
             className="heroes"
             style={{
@@ -35,8 +40,6 @@ const Home = () => {
             <h1>Home Page</h1><br></br>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, harum ipsa. Odit alias deserunt neque nam repellat quisquam quidem veritatis, omnis doloribus quaerat saepe assumenda cum eum hic quam atque?</p>
 
-
-
             <div
                 className="hero-display"
                 style={{
@@ -47,29 +50,38 @@ const Home = () => {
                 }}
             >
                 {heroes.map((hero) =>
-                    <div 
-                        id = {hero.id} 
+                    
+                    <div
+                        id={hero.name}
                         className="hero-container"
-                        style = {{
+                        style={{
                             margin: '1rem 0',
                             backgroundColor: '#202138',
                             padding: '0.65rem',
                             borderRadius: '1rem'
                         }}
+
                     >
-                        <img 
-                            src={hero.images.md}
+                        <img
+                            id={hero.p}
+                            src={hero.images.sm}
                             alt={hero.name}
-                            style = {{
+                            style={{
                                 borderRadius: '1rem'
-                            }} 
+                            }}
                         />
-                        <h2>{hero.name}</h2>
+
+                        <a 
+                            id={hero.name}
+                            href={"/viewCharacter/" + `${hero.name}`}
+                            // href='#'
+                            onClick = {openThisCharacter(hero.name)}
+                        >
+                            <h2>{hero.name}</h2>
+                        </a>
                     </div>
                 )
                 }
-
-
             </div>
         </div>
     );

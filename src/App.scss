@@ -10,13 +10,15 @@ $secondaryColor : #1F233B;
   font-family: 'Open Sans', sans-serif;
   margin: 0;
   padding: 0;
+  text-decoration: none;
 }
 
 .App {
   display: flex;
   flex-direction: column;
   position: relative;
-  height: 100%;
+  min-height: 100vh;
+  max-height: fit-content;
   margin: 0;
   padding: 0;
   text-align: center;
@@ -28,7 +30,9 @@ $secondaryColor : #1F233B;
   cursor: pointer;
 }
 
-.sidebar h2:hover {
+.sidebar h2:hover ,
+.hero-container h2:hover
+{
   color: #7D5DF8;
   transition: 0.35s ease;
 }

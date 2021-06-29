@@ -1,11 +1,5 @@
 import React from 'react'
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-
 import Logopanel from './Logopanel';
-import Home from '../Home/Home';
-import Heroes from '../Heroes/Heroes';
-import { Villains } from '../Villains/Villains';
-import { Search } from '../Search/Search';
 
 const Sidebar = () => {
     return (
@@ -23,9 +17,9 @@ const Sidebar = () => {
         >
             <Logopanel />
 
-            <h2>Heroes</h2>
-            <h2>Villains</h2>
-            <h2>Search</h2>
+            <a href='/heroes'><h2>Heroes</h2></a>
+            <a href="/villains"><h2>Villains</h2></a>
+            <a href="/search"><h2>Search</h2></a>
 
         </div>
     );
